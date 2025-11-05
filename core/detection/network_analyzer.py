@@ -8,7 +8,7 @@ class NetworkAnalyzer:
         self.known_backdoor_ports = [4444, 1337, 31337]  # Common backdoor ports
     
     def analyze_connections(self):
-        """ANALYZE NETWORK CONNECTIONS - TESTED WORKING"""
+        """Check network connections for suspicious activity"""
         print(f"{Fore.CYAN}[+] Analyzing network connections...{Style.RESET_ALL}")
         
         try:
@@ -31,7 +31,7 @@ class NetworkAnalyzer:
             print(f"{Fore.RED}[-] Error analyzing network: {e}{Style.RESET_ALL}")
     
     def is_suspicious_connection(self, conn):
-        """DETECT SUSPICIOUS NETWORK CONNECTIONS"""
+        """Check if network connection looks suspicious"""
         # Check local ports
         if hasattr(conn.laddr, 'port') and conn.laddr.port in self.suspicious_ports:
             return True
@@ -48,7 +48,7 @@ class NetworkAnalyzer:
         return False
     
     def print_suspicious_connection(self, conn):
-        """PRINT SUSPICIOUS CONNECTION DETAILS"""
+        """Display details about suspicious connection"""
         print(f"{Fore.RED}[🚨] SUSPICIOUS CONNECTION:{Style.RESET_ALL}")
         print(f"    PID: {conn.pid}")
         

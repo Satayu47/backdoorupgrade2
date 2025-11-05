@@ -4,7 +4,7 @@ from colorama import Fore, Style
 
 class BehavioralAnalyzer:
     def analyze_process(self, pid):
-        """ANALYZE SPECIFIC PROCESS - TESTED WORKING"""
+        """Perform detailed analysis of a specific process"""
         try:
             process = psutil.Process(pid)
             print(f"{Fore.CYAN}[🔬] Analyzing Process PID {pid}{Style.RESET_ALL}")
@@ -51,7 +51,7 @@ class BehavioralAnalyzer:
             print(f"{Fore.RED}[-] Analysis error: {e}{Style.RESET_ALL}")
     
     def analyze_behavior(self, process):
-        """ANALYZE PROCESS BEHAVIOR FOR MALICIOUS INDICATORS"""
+        """Look for behavioral indicators of malicious activity"""
         print(f"\n{Fore.YELLOW}[📊] BEHAVIORAL ANALYSIS:{Style.RESET_ALL}")
         
         indicators = []

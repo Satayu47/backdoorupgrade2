@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-BackdoorUpgrade - Working Backdoor Detection Tool
-TESTED AND VERIFIED - 100% WORKING
+BackdoorUpgrade - Simple backdoor detection tool
+Author: Satayu47
 """
 
 import argparse
@@ -13,18 +13,15 @@ from core.analysis.behavioral_analyzer import BehavioralAnalyzer
 
 def display_banner():
     banner = """
-    ╔═══════════════════════════════════════════════╗
-    ║            BACKDOORUPGRADE v1.0              ║
-    ║         Working Detection Toolkit           ║
-    ║     ✅ TESTED | ✅ WORKING | ✅ READY       ║
-    ╚═══════════════════════════════════════════════╝
+    BackdoorUpgrade v1.0 - Simple Backdoor Detection
+    ===============================================
     """
     print(banner)
 
 def main():
     display_banner()
     
-    parser = argparse.ArgumentParser(description='BackdoorUpgrade - Working Detection Tool')
+    parser = argparse.ArgumentParser(description='BackdoorUpgrade - Simple backdoor detection')
     subparsers = parser.add_subparsers(dest='command', help='Commands')
     
     # Detect command

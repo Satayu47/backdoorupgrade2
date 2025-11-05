@@ -18,7 +18,7 @@ class ProcessMonitor:
         ]
     
     def scan_suspicious_processes(self):
-        """SCAN AND FIND SUSPICIOUS PROCESSES - TESTED WORKING"""
+        """Scan running processes for suspicious activity"""
         print(f"{Fore.CYAN}[+] Scanning {len(list(psutil.process_iter()))} running processes...{Style.RESET_ALL}")
         
         suspicious_count = 0
@@ -40,7 +40,7 @@ class ProcessMonitor:
             print(f"{Fore.YELLOW}[!] Found {suspicious_count} potentially suspicious processes{Style.RESET_ALL}")
     
     def is_suspicious(self, process_info):
-        """CHECK IF PROCESS IS SUSPICIOUS - TESTED LOGIC"""
+        """Check if process shows signs of being malicious"""
         name = (process_info['name'] or '').lower()
         cmdline = ' '.join(process_info['cmdline'] or []).lower()
         
@@ -61,7 +61,7 @@ class ProcessMonitor:
         return False
     
     def has_suspicious_characteristics(self, process_info):
-        """DETECT SUSPICIOUS PROCESS CHARACTERISTICS"""
+        """Look for unusual process characteristics"""
         name = process_info['name'] or ''
         cmdline = ' '.join(process_info['cmdline'] or [])
         
@@ -80,7 +80,7 @@ class ProcessMonitor:
         return False
     
     def print_suspicious(self, process_info):
-        """PRINT SUSPICIOUS PROCESS DETAILS"""
+        """Display details about suspicious process"""
         print(f"{Fore.RED}[🚨] SUSPICIOUS PROCESS DETECTED:{Style.RESET_ALL}")
         print(f"    PID: {process_info['pid']}")
         print(f"    Name: {process_info['name']}")
