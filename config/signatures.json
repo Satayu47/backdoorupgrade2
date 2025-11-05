@@ -1,0 +1,43 @@
+{
+  "suspicious_processes": [
+    "nc.exe",
+    "nc",
+    "ncat", 
+    "socat",
+    "wireshark",
+    "nessus",
+    "nikto",
+    "sqlmap",
+    "hydra",
+    "john",
+    "hashcat",
+    "mimikatz",
+    "crackmapexec",
+    "bloodhound"
+  ],
+  "suspicious_keywords": [
+    "mimikatz",
+    "bloodhound", 
+    "crackmapexec",
+    "metasploit",
+    "beacon",
+    "payload",
+    "shellcode",
+    "revshell",
+    "pwncat"
+  ],
+  "suspicious_ports": [
+    4444,
+    1337,
+    31337,
+    12345,
+    9999,
+    5555,
+    6666
+  ],
+  "known_backdoor_ports": [
+    4444,
+    1337,
+    31337
+  ]
+}
